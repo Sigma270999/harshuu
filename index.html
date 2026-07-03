@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Harsh</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background: #0E0D0B;
+    color: #F3ECDD;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    background-image:
+        radial-gradient(ellipse at top, rgba(201,162,39,0.06), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(42,20,20,0.4), transparent 60%);
+}
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+.divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin: 48px auto; width: 100%; max-width: 320px; color: #8C6D1F;
+}
+.divider::before, .divider::after {
+    content: ""; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, #8C6D1F, transparent);
+}
+.divider .mark { font-size: 20px; color: #C9A227; }
+
+.hero {
+    min-height: 92vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 60px 24px; position: relative;
+}
+.eyebrow {
+    letter-spacing: 0.42em; text-transform: uppercase; font-size: 12.5px;
+    color: #8C6D1F; margin-bottom: 26px;
+}
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(56px, 11vw, 118px); line-height: 1;
+    background: linear-gradient(180deg, #F3ECDD 0%, #E8CE7A 55%, #C9A227 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .sub {
+    margin-top: 22px; font-style: italic; font-size: 21px;
+    color: #cbbfa0; max-width: 480px;
+}
+
+.candle {
+    margin-top: 54px; width: 10px; height: 64px;
+    background: linear-gradient(180deg, #E8CE7A, #C9A227);
+    border-radius: 3px; position: relative;
+    box-shadow: 0 0 24px rgba(201,162,39,0.25);
+}
+.candle::before {
+    content: ""; position: absolute; top: -26px; left: 50%;
+    transform: translateX(-50%); width: 12px; height: 22px;
+    background: radial-gradient(circle at 50% 30%, #fff3c4, #f4b942 55%, #e2641c 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 2.4s ease-in-out infinite;
+}
+.candle::after {
+    content: ""; position: absolute; top: -6px; left: 50%;
+    transform: translateX(-50%); width: 2px; height: 10px; background: #3a2a10;
+}
+@keyframes flicker {
+    0%, 100% { transform: translateX(-50%) scale(1) rotate(-1deg); opacity: 1; }
+    45% { transform: translateX(-50%) scale(1.08, 0.94) rotate(1.5deg); opacity: 0.92; }
+    70% { transform: translateX(-50%) scale(0.95, 1.05) rotate(-2deg); opacity: 0.97; }
+}
+@media (prefers-reduced-motion: reduce) { .candle::before { animation: none; } }
+
+.status-panel { text-align: center; padding: 46px 24px; }
+.status-panel .big-num {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 9vw, 88px);
+    color: #E8CE7A; font-weight: 600; line-height: 1;
+}
+.status-panel .label {
+    letter-spacing: 0.3em; text-transform: uppercase; font-size: 12px;
+    color: #8C6D1F; margin-top: 10px;
+}
+
+.message { max-width: 620px; margin: 0 auto; padding: 40px 24px 80px; text-align: center; }
+.message p { font-size: 23px; font-style: italic; color: #E9E1CC; line-height: 1.75; }
+.message .signature { margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #C9A227; }
+
+.gallery-section { padding: 20px 0 90px; }
+.section-title { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 34px; color: #F3ECDD; margin-bottom: 8px; }
+.section-sub { text-align: center; color: #8C6D1F; font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 44px; }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.gallery figure {
+    margin: 0; overflow: hidden; border-radius: 6px;
+    border: 1px solid rgba(201,162,39,0.25); aspect-ratio: 4/5; background: #17140F;
+}
+.gallery img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    filter: grayscale(12%) contrast(1.05); transition: transform 0.6s ease, filter 0.6s ease;
+}
+.gallery figure:hover img { transform: scale(1.05); filter: grayscale(0%) contrast(1.08); }
+@media (min-width: 640px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+
+.guestbook { max-width: 560px; margin: 0 auto; padding: 20px 24px 100px; }
+.guestbook form {
+    display: flex; flex-direction: column; gap: 14px; background: #17140F;
+    border: 1px solid rgba(201,162,39,0.22); border-radius: 10px; padding: 30px;
+}
+.guestbook label { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8C6D1F; }
+.guestbook input, .guestbook textarea {
+    background: #0E0D0B; border: 1px solid rgba(201,162,39,0.3); border-radius: 6px;
+    padding: 12px 14px; color: #F3ECDD; font-family: 'EB Garamond', serif; font-size: 16px; resize: vertical;
+    width: 100%;
+}
+.guestbook input:focus, .guestbook textarea:focus { outline: 2px solid #C9A227; outline-offset: 1px; }
+.guestbook button {
+    margin-top: 6px; background: linear-gradient(180deg, #E8CE7A, #C9A227); color: #17140F;
+    border: none; border-radius: 6px; padding: 13px; font-family: 'EB Garamond', serif;
+    font-weight: 600; font-size: 16px; letter-spacing: 0.04em; cursor: pointer; transition: filter 0.2s ease;
+}
+.guestbook button:hover { filter: brightness(1.08); }
+.guestbook button:focus-visible { outline: 2px solid #F3ECDD; outline-offset: 2px; }
+
+.confirm { text-align: center; color: #E8CE7A; font-style: italic; margin-bottom: 18px; display: none; }
+.wishes-list { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+.wish { border-left: 2px solid #C9A227; padding: 4px 0 4px 16px; }
+.wish .who { font-family: 'Cormorant Garamond', serif; color: #E8CE7A; font-size: 17px; }
+.wish .what { color: #cbbfa0; font-size: 16px; margin-top: 2px; }
+
+footer { text-align: center; padding: 40px 24px 60px; color: #59502f; font-size: 13px; letter-spacing: 0.1em; }
+
+/* ---------- Loading overlay (pure CSS, ~20s) ---------- */
+#loadingOverlay {
+    position: fixed; inset: 0; z-index: 999;
+    background: #0E0D0B;
+    background-image:
+        radial-gradient(ellipse at top, rgba(201,162,39,0.08), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(42,20,20,0.5), transparent 60%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px;
+    animation: overlayHide 0.9s ease forwards;
+    animation-delay: 19.6s;
+}
+
+.load-candles { display: flex; gap: 16px; margin-bottom: 40px; }
+.load-candle {
+    width: 8px; height: 46px;
+    background: linear-gradient(180deg, #E8CE7A, #C9A227);
+    border-radius: 3px; position: relative;
+    box-shadow: 0 0 20px rgba(201,162,39,0.2);
+    opacity: 0.15;
+    animation: candleLight 20s ease-in-out infinite;
+}
+.load-candle::before {
+    content: ""; position: absolute; top: -22px; left: 50%;
+    transform: translateX(-50%); width: 10px; height: 18px;
+    background: radial-gradient(circle at 50% 30%, #fff3c4, #f4b942 55%, #e2641c 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0; animation: flicker 2.2s ease-in-out infinite, flameIn 20s ease-in-out infinite;
+}
+.load-candle::after {
+    content: ""; position: absolute; top: -4px; left: 50%;
+    transform: translateX(-50%); width: 2px; height: 8px; background: #3a2a10;
+}
+.load-candle:nth-child(1) { animation-delay: 0s; }
+.load-candle:nth-child(1)::before { animation-delay: 0s, 0s; }
+.load-candle:nth-child(2) { animation-delay: 0.15s; }
+.load-candle:nth-child(2)::before { animation-delay: 0.1s, 0.15s; }
+.load-candle:nth-child(3) { animation-delay: 0.3s; }
+.load-candle:nth-child(3)::before { animation-delay: 0.2s, 0.3s; }
+.load-candle:nth-child(4) { animation-delay: 0.45s; }
+.load-candle:nth-child(4)::before { animation-delay: 0.3s, 0.45s; }
+.load-candle:nth-child(5) { animation-delay: 0.6s; }
+.load-candle:nth-child(5)::before { animation-delay: 0.4s, 0.6s; }
+
+@keyframes candleLight {
+    0% { opacity: 0.15; }
+    4% { opacity: 1; }
+    100% { opacity: 1; }
+}
+@keyframes flameIn {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+.load-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(28px, 6vw, 42px);
+    background: linear-gradient(180deg, #F3ECDD 0%, #E8CE7A 55%, #C9A227 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 18px;
+}
+
+.load-message-stack { position: relative; height: 30px; width: 100%; max-width: 420px; margin-bottom: 34px; }
+.load-message {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-style: italic; color: #cbbfa0; font-size: 18px;
+    opacity: 0;
+}
+.load-message:nth-child(1) { animation: msgFade 20s ease-in-out infinite; animation-delay: 0s; }
+.load-message:nth-child(2) { animation: msgFade 20s ease-in-out infinite; animation-delay: 4s; }
+.load-message:nth-child(3) { animation: msgFade 20s ease-in-out infinite; animation-delay: 8s; }
+.load-message:nth-child(4) { animation: msgFade 20s ease-in-out infinite; animation-delay: 12s; }
+.load-message:nth-child(5) { animation: msgFade 20s ease-in-out infinite; animation-delay: 16s; }
+@keyframes msgFade {
+    0% { opacity: 0; transform: translateY(6px); }
+    5% { opacity: 1; transform: translateY(0); }
+    18% { opacity: 1; transform: translateY(0); }
+    23% { opacity: 0; transform: translateY(-6px); }
+    100% { opacity: 0; }
+}
+
+.load-bar-track {
+    width: 260px; max-width: 70vw; height: 3px; border-radius: 2px;
+    background: rgba(201,162,39,0.18); overflow: hidden;
+}
+.load-bar-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #C9A227, #E8CE7A);
+    animation: barFill 19.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+@keyframes barFill { from { width: 0%; } to { width: 100%; } }
+
+.load-hint {
+    margin-top: 22px; font-size: 12px; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #59502f;
+}
+
+@keyframes overlayHide {
+    to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="loadingOverlay" aria-hidden="true">
+    <div class="load-candles">
+        <div class="load-candle"></div>
+        <div class="load-candle"></div>
+        <div class="load-candle"></div>
+        <div class="load-candle"></div>
+        <div class="load-candle"></div>
+    </div>
+    <div class="load-title">Lighting the candles</div>
+    <div class="load-message-stack">
+        <div class="load-message">Wrapping up something warm for you...</div>
+        <div class="load-message">Gathering the sweetest moments...</div>
+        <div class="load-message">Tying the ribbon just right...</div>
+        <div class="load-message">Almost time to make a wish...</div>
+        <div class="load-message">One more candle to go...</div>
+    </div>
+    <div class="load-bar-track"><div class="load-bar-fill"></div></div>
+    <div class="load-hint">Preparing your celebration</div>
+</div>
+
+<section class="hero">
+    <div class="eyebrow">A little celebration, just for you</div>
+    <h1>Happy Birthday<br><span id="friendName">Aarav</span></h1>
+    <p class="sub">Wishing you a day as wonderful as you are.</p>
+    <div class="candle" aria-hidden="true"></div>
+</section>
+
+<div class="wrap">
+
+    <div class="status-panel">
+        <div class="big-num" id="statusNumber">--</div>
+        <div class="label" id="statusLabel">Loading</div>
+    </div>
+
+    <div class="divider"><span class="mark">✦</span></div>
+
+    <section class="message">
+        <p>"Every year I get to know you a little longer, and I'm grateful for every bit of it. Here's to another year of your laugh, your ideas, and all the small moments that make you, you."</p>
+        <div class="signature">— Your friend</div>
+    </section>
+
+    <div class="divider"><span class="mark">✦</span></div>
+
+    <section class="gallery-section">
+        <div class="section-title">Moments</div>
+        <div class="section-sub">A few favorites</div>
+        <div class="gallery" id="gallery">
+            <!-- Add <figure><img src="images/photo1.jpg" alt=""></figure> for each photo -->
+        </div>
+    </section>
+
+    <div class="divider"><span class="mark">✦</span></div>
+
+    <section class="guestbook">
+        <div class="section-title">Leave a wish</div>
+        <div class="section-sub">Add your own note below</div>
+
+        <p class="confirm" id="confirmMsg">Your wish has been added. Thank you 🤍</p>
+
+        <form id="wishForm">
+            <div>
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" maxlength="60" required>
+            </div>
+            <div>
+                <label for="wish">Your wish</label>
+                <textarea id="wish" name="wish" rows="3" maxlength="400" required></textarea>
+            </div>
+            <button type="submit">Send wish</button>
+        </form>
+
+        <div class="wishes-list" id="wishesList"></div>
+    </section>
+
+</div>
+
+<footer>made with care, for <span id="friendNameFooter">Aarav</span></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
